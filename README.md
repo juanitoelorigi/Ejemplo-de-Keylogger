@@ -26,27 +26,39 @@ El proyecto se compone de dos partes operando en la misma red local:
    cd keylogger-poC
 Instalar dependencias:
 
-Bash
+```bash
 npm install express cors
+```
+
 Averiguar tu IP Local:
 Abre una terminal en tu computadora (Linux/Mac) y ejecuta:
 
-Bash
+
+```bash
 ip a
+
+```
+
 Busca la dirección IP asignada a tu interfaz inalámbrica (normalmente empieza con 192.168.x.x).
 
 Iniciar el Servidor:
 Ejecuta el servidor en la terminal:
 
-Bash
+
+```bash
 node server.js
+
+```
+
 Deberás ver el mensaje: Servidor listo en el puerto 3000. Esperando teclas...
 
 Conectar el Cliente:
 En el navegador del dispositivo objetivo (ej. Safari en un iPhone), ingresa la siguiente URL, sustituyendo la IP por la tuya:
 
-Plaintext
+
+```Plaintext
 http://TU_IP_LOCAL:3000
+```
 
 📱 Uso de la Demostración
 Una vez dentro de la página web desde el móvil, toca en cualquier parte de la pantalla (fondo oscuro). El teclado virtual se desplegará. Todo lo que escribas será invisible en la pantalla del teléfono, pero se registrará instantáneamente en la terminal del servidor Node.js.
