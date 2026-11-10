@@ -2,6 +2,8 @@
 
 <img src="IMG/cap.jpeg" width="300" alt="Texto alternativo">
 
+<img src="IMG/cap2.png" width="300" alt="Texto alternativo">
+
 Prueba de Concepto (PoC) desarrollada para la clase de Seguridad Informática. Este proyecto demuestra cómo funciona la captura de eventos de teclado a nivel de aplicación (*Application-Level Logging*) utilizando una arquitectura Cliente-Servidor en una red local (LAN).
 
 > ⚠️ **Advertencia Ética:** Este proyecto tiene fines estrictamente educativos y didácticos. El registro de teclas ocurre únicamente dentro de un entorno controlado, visible y autorizado mediante consentimiento explícito del usuario. No registra datos en segundo plano ni fuera del alcance del navegador.
