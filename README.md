@@ -2,7 +2,7 @@
 
 <img src="IMG/cap.jpeg" width="300" alt="Texto alternativo">
 
-<img src="IMG/cap2.png" width="300" alt="Texto alternativo">
+<img src="IMG/cap2.png"  alt="Texto alternativo">
 
 Prueba de Concepto (PoC) desarrollada para la clase de Seguridad Informática. Este proyecto demuestra cómo funciona la captura de eventos de teclado a nivel de aplicación (*Application-Level Logging*) utilizando una arquitectura Cliente-Servidor en una red local (LAN).
 
