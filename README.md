@@ -64,5 +64,6 @@ En el navegador del dispositivo objetivo (ej. Safari en un iPhone), ingresa la s
 http://TU_IP_LOCAL:3000
 ```
 
-📱 Uso de la Demostración
+# Uso de la Demostración
+
 Una vez dentro de la página web desde el móvil, toca en cualquier parte de la pantalla (fondo oscuro). El teclado virtual se desplegará. Todo lo que escribas será invisible en la pantalla del teléfono, pero se registrará instantáneamente en la terminal del servidor Node.js.
