@@ -1,6 +1,4 @@
-# Keylogger Didáctico (PoC) 🛡️
-
-<img src="IMG/cap.jpeg"  alt="Texto alternativo">
+# Keylogger Didáctico (PoC) 
 
 <img src="IMG/cap2.png"  alt="Texto alternativo">
 
